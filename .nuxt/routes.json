@@ -1,0 +1,43 @@
+[
+  {
+    "path": "/",
+    "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\layout",
+    "children": [
+      {
+        "path": "",
+        "name": "home",
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\home"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\login"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\login"
+      },
+      {
+        "path": "/profile/:username",
+        "name": "profile",
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\profile"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\settings"
+      },
+      {
+        "path": "/editor",
+        "name": "editor",
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\editor"
+      },
+      {
+        "path": "/article/:slug",
+        "name": "article",
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\article"
+      }
+    ]
+  }
+]
