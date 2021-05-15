@@ -1,43 +1,51 @@
 [
   {
     "path": "/",
-    "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\layout",
+    "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\layout",
     "children": [
       {
         "path": "",
         "name": "home",
-        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\home"
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\home",
+        "_name": "_7f043a52"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\login"
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\login",
+        "_name": "_61bb5856"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\login"
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\login",
+        "_name": "_61bb5856"
       },
       {
         "path": "/profile/:username",
         "name": "profile",
-        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\profile"
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\profile",
+        "_name": "_8d252954"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\settings"
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\settings",
+        "_name": "_05801016"
       },
       {
         "path": "/editor",
         "name": "editor",
-        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\editor"
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\editor",
+        "_name": "_6db853c0"
       },
       {
         "path": "/article/:slug",
         "name": "article",
-        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs\\\\pages\\\\article"
+        "component": "D:\\\\workspace\\\\study\\\\Vue\\\\Vue.js服务端渲染(SSR)\\\\realworld-nuxtjs-github\\\\pages\\\\article",
+        "_name": "_bf90a2ba"
       }
-    ]
+    ],
+    "_name": "_561aa046"
   }
 ]

@@ -2,7 +2,7 @@
   <div class="home-page">
     <div class="banner">
       <div class="container">
-        <h1 class="logo-font">拉勾教育</h1>
+        <h1 class="logo-font">conduit</h1>
         <p>A place to share your knowledge.</p>
       </div>
     </div>
@@ -41,7 +41,18 @@
               </li>
             </ul>
           </div>
-
+          <div
+            v-show="articles.length === 0 && loading == false"
+            class="article-preview"
+          >
+            No articles are here... yet.
+          </div>
+          <div
+            v-show="loading === true"
+            class="article-preview"
+          >
+            Loading articles...
+          </div>
           <div
             v-for="article in articles"
             :key="article.slug"
@@ -156,6 +167,7 @@ export default {
     const { tag, tab = "global_feed" } = query;
     const loadArticles =
       store.state.user && tab === "your_feed" ? getFeedArticles : getArticles;
+    let loading = true;
     const [articleRes, tagRes] = await Promise.all([
       loadArticles({
         limit,
@@ -164,12 +176,13 @@ export default {
       }),
       getTags(),
     ]);
-
+    loading = false;
     const { articles, articlesCount } = articleRes.data;
     const { tags } = tagRes.data;
 
     articles.forEach((article) => (article.favoriteDisabled = false));
     return {
+      loading,
       articles,
       articlesCount,
       limit,
