@@ -12,6 +12,7 @@
                   class="form-control"
                   type="text"
                   placeholder="URL of profile picture"
+                  v-model="userInfo.image"
                 />
               </fieldset>
               <fieldset class="form-group">
@@ -19,6 +20,7 @@
                   class="form-control form-control-lg"
                   type="text"
                   placeholder="Your Name"
+                  v-model="userInfo.username"
                 />
               </fieldset>
               <fieldset class="form-group">
@@ -26,6 +28,7 @@
                   class="form-control form-control-lg"
                   rows="8"
                   placeholder="Short bio about you"
+                  v-model="userInfo.bio"
                 ></textarea>
               </fieldset>
               <fieldset class="form-group">
@@ -33,16 +36,21 @@
                   class="form-control form-control-lg"
                   type="text"
                   placeholder="Email"
+                  v-model="userInfo.email"
                 />
               </fieldset>
               <fieldset class="form-group">
                 <input
                   class="form-control form-control-lg"
                   type="password"
-                  placeholder="Password"
+                  placeholder="New Password"
                 />
               </fieldset>
-              <button class="btn btn-lg btn-primary pull-xs-right">
+              <button
+                class="btn btn-lg btn-primary pull-xs-right"
+                @click="updateSetting"
+                :disabled="updateDisabled"
+              >
                 Update Settings
               </button>
             </fieldset>
@@ -54,9 +62,38 @@
 </template>
 
 <script>
+import { updateUser } from "@/api/user";
 export default {
-  middleware: 'authenticated',
-  name: 'SettingsIndex'
+  middleware: "authenticated",
+  name: "SettingsIndex",
+  data() {
+    return {
+      updateDisabled: false,
+      userInfo: {
+        bio: "",
+        email: "",
+        image: "",
+        username: "",
+      },
+    };
+  },
+  computed: {},
+  created() {
+    this.userInfo = {
+      bio: this.$store.state.user.bio,
+      email: this.$store.state.user.email,
+      image: this.$store.state.user.image,
+      username: this.$store.state.user.username,
+    };
+  },
+  methods: {
+    async updateSetting() {
+      this.updateDisabled = true;
+      const { data } = await updateUser(this.userInfo);
+      this.$store.commit("setUser", data.user);
+      this.$router.push("/");
+    },
+  },
 };
 </script>
 

@@ -1,6 +1,6 @@
 import { request } from '@/plugins/request'
 
-// 获取公共的文章列表
+// 获取文章列表
 export const getArticles = params => {
   return request({
     method: 'GET',
@@ -97,4 +97,3 @@ export const deleteArticle = slug => {
     url: `/api/articles/${slug}`
   })
 }
-

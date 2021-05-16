@@ -47,10 +47,7 @@
           >
             No articles are here... yet.
           </div>
-          <div
-            v-show="loading === true"
-            class="article-preview"
-          >
+          <div v-show="loading === true" class="article-preview">
             Loading articles...
           </div>
           <div
@@ -100,6 +97,18 @@
               <h1>{{ article.title }}</h1>
               <p>{{ article.description }}</p>
               <span>Read more...</span>
+              <ul
+                class="tag-list"
+                style="float: right; max-width: 50%; vertical-align: top"
+              >
+                <li
+                  class="tag-default tag-pill tag-outline"
+                  v-for="(tag, index) in article.tagList"
+                  :key="index"
+                >
+                  {{ tag }}
+                </li>
+              </ul>
             </nuxt-link>
           </div>
 

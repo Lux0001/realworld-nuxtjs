@@ -33,3 +33,20 @@ export const unFollowUser = username => {
     url: `/api/profiles/${username}/follow`
   })
 }
+
+// 获取当前用户信息
+export const getUser = username => {
+  return request({
+    method: 'GET',
+    url: `/api/profiles/${username}`
+  })
+}
+
+// 更新用户信息
+export const updateUser = data => {
+  return request({
+    method: 'PUT',
+    url: '/api/user',
+    data
+  })
+}

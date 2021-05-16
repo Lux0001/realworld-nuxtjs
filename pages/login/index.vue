@@ -89,8 +89,6 @@ export default {
         : await register({
             user: this.user,
           });
-
-        console.log('用户信息：',data);
         // TODO: 保存用户的登录状态
         this.$store.commit('setUser', data.user)
 
@@ -102,7 +100,6 @@ export default {
         // 跳转到首页
         this.$router.push("/");
       } catch (error) {
-        console.dir("请求失败：", error);
         this.errors = error.response.data.errors;
       }
     },
