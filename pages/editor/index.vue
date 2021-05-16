@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { publishArticle, getArticle } from "@/api/article";
+import { publishArticle, getArticle, updateArticle } from "@/api/article";
 export default {
   // 在路由匹配组件渲染之前会先执行中间件处理
   middleware: "authenticated", // 如果有多个中间件可以放在数组中
@@ -91,14 +91,14 @@ export default {
   },
   async created() {
     if (this.$route.query.slug) {
-      const { data } = await getArticle(this.$route.query.slug)
-      const { article } = data
+      const { data } = await getArticle(this.$route.query.slug);
+      const { article } = data;
       this.article = {
         title: article.title,
         description: article.description,
         body: article.body,
         tagList: article.tagList,
-      }
+      };
     }
   },
   methods: {
@@ -111,7 +111,9 @@ export default {
     },
     async addArticle() {
       try {
-        const { data } = await publishArticle(this.article);
+        const { data } = await (this.$route.query.slug
+          ? updateArticle(this.$route.query.slug, this.article)
+          : publishArticle(this.article));
         const { slug } = data.article;
         this.$router.push(`/article/${slug}`);
       } catch (error) {

@@ -11,7 +11,17 @@
       <div class="row article-content">
         <div class="col-md-12" v-html="article.body"></div>
       </div>
-
+      <ul
+        class="tag-list"
+      >
+        <li
+          class="tag-default tag-pill tag-outline"
+          v-for="(tag, index) in article.tagList"
+          :key="index"
+        >
+          {{ tag }}
+        </li>
+      </ul>
       <hr />
 
       <div class="article-actions">
@@ -20,7 +30,7 @@
 
       <div class="row">
         <div class="col-xs-12 col-md-8 offset-md-2">
-          <articleComments :article='article'></articleComments>
+          <articleComments :article="article"></articleComments>
         </div>
       </div>
     </div>

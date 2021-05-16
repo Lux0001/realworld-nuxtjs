@@ -177,6 +177,7 @@ export default {
     const loadArticles =
       store.state.user && tab === "your_feed" ? getFeedArticles : getArticles;
     let loading = true;
+    console.log(1)
     const [articleRes, tagRes] = await Promise.all([
       loadArticles({
         limit,
